@@ -204,13 +204,15 @@ do
             # $2(영화 평점 합계)를 기준으로 높은 것만 추출해서 오름차순으로 정렬해서 condensed_data_3.txt에 저장함.
             # condensed_data_3.txt의 $1 = 중복없는 영화 ID, $2 = 영화 평점 총합, $3 = 카운트가 됨. 
             awk -F' ' '{key=$1; if($2 > max[key]){max[key]=$2; line[key]=$0;}} END {for(key in max){print line[key];}}' condensed_data_2.txt |sort -n > condensed_data_3.txt
-            # condensed_data_3.txt안에 $2(평점 합계)와 $3(카운트)를 한번에 나눠주면 평균 평점을 한번에 3초안에 출력할 수 있다.
+            # condensed_data_3.txt안에 $2(평점 합계)와 $3(카운트)를 한번에 나눠주면 평균 평점을 한번에 4초안에 출력할 수 있다.      
+            # 이 부분에서는 0인 소수점을 제거하면서 출력하는 코드이다.
+            # %.5f으로 소수점 아래 5자리까지 유지합니다.
+            # 정규 표현식 \.?0+$를 사용하여 average 문자열에서 소수 부분에서 소수점 뒤에 0이 1개 이상 있는 경우 이를 제거함.
             awk -F' ' '{
-                average = $2 / $3 ;
-                # 이 부분에서는 0인 소수점을 제거하면서 출력하는 코드이다.
-                # 정규 표현식 \.?0+$를 사용하여 average 문자열에서 소수 부분에서 소수점 뒤에 0이 1개 이상 있는 경우 이를 제거함.
-                    sub(/\.?0+$/, "", average);
-                    printf "%d %s\n", $1, average;}}' condensed_data_3.txt
+average = sprintf("%.5f",$2 / $3);
+sub(/\.?0+$/, "", average);
+printf "%d %s\n", $1, average;}' condensed_data_3.txt 
+
             # 생성한 txt파일들 제거함.
             rm condensed_data_1.txt
             rm condensed_data_2.txt
