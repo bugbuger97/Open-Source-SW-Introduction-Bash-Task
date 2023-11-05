@@ -45,7 +45,7 @@ do
             fi
         done < $data
         result=$(echo "scale=6; $rating_sum / $count" | bc)
-        result=$(printf "%.5f", $rating_sum / $count)
+        result=$(printf "%.5f" $result)
         echo
         echo "average rating of $input_movie_id: $result"
     elif [ $choice = 4 ]; then
