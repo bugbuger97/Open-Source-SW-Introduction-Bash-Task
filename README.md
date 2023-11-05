@@ -39,8 +39,9 @@ Open-Source-SW-Introduction-Bash-Task
     echo "9. Exit"
     echo "--------------------------"
 
-# 무한 loop를 while문을 통해 실행
+무한 loop를 while문을 통해 실행
 무한 루프를 통해 사용자의 선택을 반복적으로 처리합니다.
+
 while true
 do
     
