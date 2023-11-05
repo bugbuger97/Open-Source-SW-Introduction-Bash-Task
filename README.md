@@ -4,48 +4,40 @@ Open-Source-SW-Introduction-Bash-Task
 
 커맨드 : bash prj1_12215332_paengjunho.sh u.item u.data u.user
               
-#! /bin/bash -> 스크립트가 Bash를 사용하여 실행됨.
+    #! /bin/bash -> 스크립트가 Bash를 사용하여 실행됨.
 
-스크립트 실행 시 전달된 인수를 변수에 할당함.
-$1, $2, $3은 스크립트를 실행할 때, 전달된 인수를 나타냄.
-$1 <- u.item을 나타냄.
-$2 <- u.data를 나타냄.
-$3 <- u.user를 나타냄.
+    # 스크립트 실행 시 전달된 인수를 변수에 할당함.
+    # $1, $2, $3은 스크립트를 실행할 때, 전달된 인수를 나타냄.
+    # $1 <- u.item을 나타냄.
+    # $2 <- u.data를 나타냄.
+    # $3 <- u.user를 나타냄.
 
-item=$1  
-data=$2  
-user=$3
+    item=$1  
+    data=$2  
+    user=$3
 
 
-과제 pdf의 형식을 echo를 사용하여 나타냄.
-echo "--------------------------"
-현재 사용자 이름을 출력함.
-echo "User Name: $(whoami)" 
-학번을 출력함.
-echo "Student Number: 12215332" 
+    # 과제 pdf의 형식을 echo를 사용하여 나타냄.
+    echo "--------------------------"
+    
+    # 현재 사용자 이름을 출력함.
+    echo "User Name: $(whoami)" 
+    
+    # 학번을 출력함.
+    echo "Student Number: 12215332" 
 
-형식에 맞춰서 메뉴 항목을 화면에 출력함.
-echo "[ MENU ]"
-
-echo "1. Get the data of the movie identified by a specific 'movie id' from 'u.item'"
-
-echo "2. Get the data of action genre movies from 'u.item'"
-
-echo "3. Get the average 'rating' of the movie identified by specific 'movie id' from 'u.data'"
-
-echo "4. Delete the 'IMDb URL' from 'u.item'"
-
-echo "5. Get the data about users from 'u.user'"
-
-echo "6. Modify the format of 'release date' in 'u.item'"
-
-echo "7. Get the data of movies rated by a specific 'user id' from 'u.data'"
-
-echo "8. Get the average 'rating' of movies rated by users with 'age' between 20 and 29 and 'occupation' as 'programmer'"
-
-echo "9. Exit"
-
-echo "--------------------------"
+    # 형식에 맞춰서 메뉴 항목을 화면에 출력함.
+    echo "[ MENU ]"
+    echo "1. Get the data of the movie identified by a specific 'movie id' from 'u.item'"
+    echo "2. Get the data of action genre movies from 'u.item'"
+    echo "3. Get the average 'rating' of the movie identified by specific 'movie id' from 'u.data'"
+    echo "4. Delete the 'IMDb URL' from 'u.item'"
+    echo "5. Get the data about users from 'u.user'"
+    echo "6. Modify the format of 'release date' in 'u.item'"
+    echo "7. Get the data of movies rated by a specific 'user id' from 'u.data'"
+    echo "8. Get the average 'rating' of movies rated by users with 'age' between 20 and 29 and 'occupation' as 'programmer'"
+    echo "9. Exit"
+    echo "--------------------------"
 
 # 무한 loop를 while문을 통해 실행
 무한 루프를 통해 사용자의 선택을 반복적으로 처리합니다.
