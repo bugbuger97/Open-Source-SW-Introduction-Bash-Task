@@ -209,9 +209,9 @@ do
             # %.5f으로 소수점 아래 5자리까지 유지합니다.
             # 정규 표현식 \.?0+$를 사용하여 average 문자열에서 소수 부분에서 소수점 뒤에 0이 1개 이상 있는 경우 이를 제거함.
             awk -F' ' '{
-average = sprintf("%.5f",$2 / $3);
-sub(/\.?0+$/, "", average);
-printf "%d %s\n", $1, average;}' condensed_data_3.txt 
+    average = sprintf("%.5f",$2 / $3);
+    sub(/\.?0+$/, "", average);
+    printf "%d %s\n", $1, average;}' condensed_data_3.txt 
 
             # 생성한 txt파일들 제거함.
             rm condensed_data_1.txt
